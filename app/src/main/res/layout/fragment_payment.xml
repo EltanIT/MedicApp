@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".main_screens.fragments.PaymentFragment"
+    android:background="@color/white"
+    >
+
+    <TextView
+        android:id="@+id/text1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Оплата"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="32dp"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        />
+
+    <LinearLayout
+        android:id="@+id/progress_ll"
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+
+        >
+        <ImageView
+            android:id="@+id/payment_icon_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/payment_icon"
+            android:layout_gravity="center"
+            />
+
+        <TextView
+            android:id="@+id/state_payment_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Связываемся с банком..."
+            android:textColor="@color/Caption"
+            android:layout_marginTop="32dp"
+            android:textSize="18sp"
+
+            />
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/group2_cl"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        >
+
+        <LinearLayout
+            android:id="@+id/group1_ll"
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/get_check"
+            app:layout_constraintTop_toTopOf="parent"
+            android:gravity="center"
+            >
+            <ImageView
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:src="@drawable/analise_screen_picture"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ваш заказ успешно оплачен!"
+                android:textSize="24sp"
+                android:textColor="#00B712"
+                android:textStyle="bold"
+                android:layout_marginTop="32dp"
+                />
+            <TextView
+                android:layout_marginTop="16dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Вам осталось дождаться приезда медсестры и сдать анализы. До скорой встречи!"
+                android:textSize="16sp"
+                android:textColor="@color/Caption"
+                android:textStyle="normal"
+                android:textAlignment="center"
+                android:layout_marginHorizontal="16dp"
+
+                />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/rule_group"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/get_check"
+                android:layout_marginTop="16dp"
+                android:layout_marginHorizontal="16dp"
+                >
+                <TextView
+                    android:id="@+id/text2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Не забудьте ознакомиться с"
+                    android:textSize="16sp"
+                    android:textColor="@color/Caption"
+                    android:textStyle="normal"
+                    android:textAlignment="center"
+                    android:layout_marginHorizontal="16dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/text3"
+
+                    />
+                <ImageView
+                    android:id="@+id/icon_rule"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:src="@drawable/payment_icon_rule"
+                    app:layout_constraintStart_toEndOf="@id/text2"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:scaleType="fitXY"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginBottom="5dp"
+                    />
+                <TextView
+                    android:id="@+id/text3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text=" правилами подготовки к сдаче анализов"
+                    android:textSize="16sp"
+                    android:textColor="@color/accent"
+                    android:textStyle="normal"
+                    android:layout_marginStart="5dp"
+                    app:layout_constraintStart_toEndOf="@id/icon_rule"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:scrollHorizontally="false"
+
+                    />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/get_check"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/white_button_with_blue_wight_style"
+            android:text="Чек покупки"
+            android:textColor="@color/accent"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/go_to_mainscreen"
+            style="?android:attr/borderlessButtonStyle"
+            android:textAllCaps="false"
+            />
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/go_to_mainscreen"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/order_button_style"
+            android:text="На главную"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginHorizontal="16dp"
+            style="?android:attr/borderlessButtonStyle"
+            android:textAllCaps="false"
+
+            />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

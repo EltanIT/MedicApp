@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".login_screens.fragments.CreateCardFragment">
+
+    <TextView
+        android:id="@+id/miss_fragment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Пропустить"
+        android:textColor="@color/blue_text"
+        android:textSize="20sp"
+        android:textFontWeight="600"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="16dp"
+
+        />
+    <TextView
+        android:id="@+id/text1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Создание карты пациента"
+        android:textColor="@color/black"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/miss_fragment"
+        android:layout_marginTop="20dp"
+        android:lines="2"
+        android:paddingEnd="20dp"
+        android:layout_marginStart="32dp"
+        />
+
+    <TextView
+        android:id="@+id/text2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Без карты пациента вы не сможете заказать анализы."
+        android:textColor="@color/Caption"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@id/text1"
+        app:layout_constraintTop_toBottomOf="@id/text1"
+        android:layout_marginTop="13dp"
+        />
+
+    <TextView
+        android:id="@+id/text3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="В картах пациентов будут храниться результаты анализов вас и ваших близких."
+        android:textColor="@color/Caption"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@id/text2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text2"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="16dp"
+        />
+
+    <EditText
+        android:id="@+id/et_name"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text3"
+        android:background="@drawable/create_card_et_style"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="20dp"
+        android:hint="Имя"
+        android:textColor="@color/Caption"
+        android:paddingHorizontal="16dp"
+        />
+
+    <EditText
+        android:id="@+id/et_otchestvo"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/et_name"
+        android:background="@drawable/create_card_et_style"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="20dp"
+        android:hint="Отчество"
+        android:textColor="@color/Caption"
+        android:paddingHorizontal="16dp"
+        />
+
+    <EditText
+        android:id="@+id/et_lastname"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/et_otchestvo"
+        android:background="@drawable/create_card_et_style"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="20dp"
+        android:hint="Фамилия"
+        android:textColor="@color/Caption"
+        android:paddingHorizontal="16dp"
+        />
+    <EditText
+        android:id="@+id/et_birthday"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/et_lastname"
+        android:background="@drawable/create_card_et_style"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="20dp"
+        android:hint="Дата рождения"
+        android:textColor="@color/Caption"
+        android:paddingHorizontal="16dp"
+        />
+
+    <Spinner
+        android:id="@+id/sex_s"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/et_birthday"
+        android:background="@drawable/create_card_et_style"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="20dp"
+        android:paddingHorizontal="16dp"
+        tools:listitem="@layout/view_create_card_sex_spinner"
+        />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/continue_button"
+        android:layout_width="match_parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/sex_s"
+        android:layout_height="60dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginHorizontal="16dp"
+        android:background="@drawable/order_button_style"
+        android:text="Далее"
+        android:textSize="17sp"
+        android:textColor="@color/white"
+        style="?android:attr/borderlessButtonStyle"
+        android:textAllCaps="false"
+
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

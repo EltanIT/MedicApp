@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".login_screens.fragments.IdentificationEmailFragment"
+    android:background="@color/white"
+    >
+
+    <ImageView
+        android:id="@+id/back_button"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:src="@drawable/back_button"
+        android:scaleType="fitXY"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="32dp"
+        android:layout_marginStart="16dp"
+        />
+    <TextView
+        android:id="@+id/text1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Введите код из E-mail"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textSize="17sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="200dp"
+        />
+    <com.chaos.view.PinView
+        android:id="@+id/edit_text_code_pv"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        style="@style/PinWidget.PinView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text1"
+        android:paddingTop="10dp"
+        android:itemBackground="@color/Input_Stroke"
+        app:itemRadius="12dp"
+        app:lineColor="@color/transparent_color"
+        app:itemSpacing="15dp"
+        android:cursorVisible="false"
+        android:textColor="@color/black"
+        android:textSize="22sp"
+        android:inputType="number"
+        />
+
+    <TextView
+        android:id="@+id/timer_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Отправить код повторно можно будет через 59 секунд"
+        android:textColor="@color/Caption"
+        android:textStyle="bold"
+        android:textSize="15sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edit_text_code_pv"
+        android:layout_marginTop="10dp"
+        android:paddingHorizontal="70dp"
+        android:textAlignment="center"
+        />
+</androidx.constraintlayout.widget.ConstraintLayout>

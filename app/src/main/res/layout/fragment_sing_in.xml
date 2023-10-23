@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".login_screens.fragments.SignInFragment"
+    android:background="@color/white">
+
+    <TextView
+        android:id="@+id/welcome_emojie"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="🤚"
+        android:textStyle="bold"
+        android:textSize="32sp"
+        android:fontFamily="sans-serif-black"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="100dp"
+        android:layout_marginStart="16dp"
+        />
+    <TextView
+        android:id="@+id/welcome_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Добро пожаловать!"
+        android:textStyle="bold"
+        android:textSize="24sp"
+        android:fontFamily="sans-serif-black"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toEndOf="@id/welcome_emojie"
+        app:layout_constraintTop_toTopOf="@id/welcome_emojie"
+        app:layout_constraintBottom_toBottomOf="@id/welcome_emojie"
+        android:layout_marginStart="8dp"
+    />
+
+    <TextView
+        android:id="@+id/text1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Войдите, чтобы пользоваться функциями приложения"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        android:fontFamily="sans-serif-medium"
+        android:paddingEnd="30dp"
+        app:layout_constraintStart_toStartOf="@id/welcome_emojie"
+        app:layout_constraintTop_toBottomOf="@id/welcome_emojie"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="5dp"
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/text1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text1"
+        android:layout_marginTop="30dp"
+        android:orientation="vertical"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Вход по E-mail"
+            android:textColor="@color/Description"
+            android:textSize="16sp"
+            android:fontFamily="sans-serif-condensed"
+            android:layout_gravity="left"
+            />
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="example@mail.ru"
+            android:textColor="@color/black"
+            android:background="@drawable/login_edittext_style"
+            android:paddingStart="10dp"
+            android:textColorHint="@color/black_50_tran"
+            android:layout_marginTop="5dp"
+            />
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/login_button"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/login_button_style"
+            android:text="Далее"
+            android:textSize="17sp"
+            android:textColor="@color/white"
+            style="?android:attr/borderlessButtonStyle"
+            android:textAllCaps="false"
+            />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Или войдите с помощью"
+        android:textColor="@color/Caption"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/login_yandex_button"
+        android:layout_marginBottom="10dp"
+        
+        />
+    
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/login_yandex_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Войти с Яндекс"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginHorizontal="16dp"
+        android:background="@drawable/login_button_yandex_style"
+        android:layout_marginBottom="30dp"
+        style="?android:attr/borderlessButtonStyle"
+        android:textAllCaps="false"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

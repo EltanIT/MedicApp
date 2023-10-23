@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    >
+    <item android:drawable="@drawable/main_screen_gradient_fon" />
+    <item android:drawable="@drawable/splash_screen_logo" android:gravity="center"
+        android:width="300dp"
+        android:height="300dp"
+        />
+
+</layer-list>

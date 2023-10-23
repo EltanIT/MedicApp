@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="60dp">
+
+    <TextView
+        android:id="@+id/sex_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Мужской"
+        android:layout_centerVertical="true"
+        android:textSize="18sp"
+        android:textColor="@color/black"
+        android:layout_marginStart="16dp"
+        />
+    <ImageView
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:src="@drawable/place_on_order_arrow"
+        android:background="@color/Input_Stroke"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:scaleType="fitXY"
+        android:rotation="90"
+        />
+
+</RelativeLayout>
