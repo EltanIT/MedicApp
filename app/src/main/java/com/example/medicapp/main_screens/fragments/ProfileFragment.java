@@ -2,7 +2,9 @@ package com.example.medicapp.main_screens.fragments;
 
 import static android.app.Activity.RESULT_OK;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.ImageDecoder;
@@ -56,22 +58,27 @@ public class ProfileFragment extends Fragment {
     private byte sex = 0;
     private List<String> sexList = new ArrayList<>();
     private Uri imageUri;
-    private Profile profile;
+    private Profile profile = new Profile();
+
+    private SharedPreferences preferences;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         binding = FragmentProfileBinding.inflate(inflater, container, false);
-//        preferences = getActivity().getSharedPreferences("Table", Context.MODE_PRIVATE);
+        preferences = getActivity().getSharedPreferences("Table", Context.MODE_PRIVATE);
 //        TextView text1 = getView().findViewById(R.id.text1);
 
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                new GetProfile().execute();
-                new GetImage().execute();
-            }
-        }).start();
+//        new Thread(new Runnable() {
+//            @Override
+//            public void run() {
+//                new GetProfile().execute();
+//                new GetImage().execute();
+//            }
+//        }).start();
+        Gson gson = new Gson();
+        profile = gson.fromJson(preferences.getString("profile", null), Profile.class);
+        settingProfile();
         setBinding();
 
         return binding.getRoot();
@@ -87,7 +94,7 @@ public class ProfileFragment extends Fragment {
             sexList.add("Мужской");
             sexList.add("Женский");
         }
-        else if (sex == 1){
+        else{
             sexList.add("Женский");
             sexList.add("Мужской");
         }
@@ -231,8 +238,12 @@ public class ProfileFragment extends Fragment {
     void saveProfile(Profile profile){
         Gson gson = new Gson();
         String profileJson = gson.toJson(profile);
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.remove("profile");
+        editor.putString("profile", profileJson);
+        editor.commit();
 
-        new PutProfile().execute(profileJson);
+//        new PutProfile().execute(profileJson);
     }
 
     public void getProfile(){

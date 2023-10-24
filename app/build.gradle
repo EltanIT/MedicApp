@@ -4,7 +4,7 @@ plugins {
 
 android {
     namespace 'com.example.medicapp'
-    compileSdk 33
+    compileSdk 34
     useLibrary("org.apache.http.legacy")
 
     defaultConfig {
@@ -31,6 +31,7 @@ android {
     buildFeatures{
         viewBinding = true
     }
+    buildToolsVersion '30.0.3'
 }
 
 dependencies {

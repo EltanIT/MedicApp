@@ -377,9 +377,13 @@ public class PlaceOnOrderFragment extends Fragment {
 
     private Profile getProfile(){
         Gson gson = new Gson();
-       String profileJson = preferences.getString("profileJson", null);
+       String profileJson = preferences.getString("profile", null);
        if (profileJson != null){
            Profile profile = gson.fromJson(profileJson, Profile.class);
+           if(profile.getName().isEmpty()){
+               Toast.makeText(getActivity(),"Создайте профиль для оформления заказа", Toast.LENGTH_SHORT).show();
+               requireActivity().getSupportFragmentManager().popBackStack();
+           }
            return profile;
        }
        else {

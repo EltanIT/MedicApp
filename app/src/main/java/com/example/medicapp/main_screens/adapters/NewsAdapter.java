@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.medicapp.R;
 import com.example.medicapp.main_screens.objects.News;
+import com.google.gson.Gson;
 
 import java.util.List;
 

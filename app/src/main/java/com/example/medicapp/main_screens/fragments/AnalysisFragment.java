@@ -124,6 +124,7 @@ public class AnalysisFragment extends Fragment implements MainScreen.Backpressed
 
                     analysisList = new ArrayList<>();
                     allGetAnalysisList = objectMapper.readValue(s, listType);
+//                    analysisList = objectMapper.readValue(s, listType);
 
                     setAnalysisList();
                     selectFragment();
@@ -219,12 +220,13 @@ public class AnalysisFragment extends Fragment implements MainScreen.Backpressed
 
         }
 
-        private void setNewsList() {
-            newsAdapter = new NewsAdapter(newsList, getContext());
 
-            binding.rvNews.setAdapter(newsAdapter);
-            loadActive[1] = true;
-        }
+    }
+    private void setNewsList() {
+        newsAdapter = new NewsAdapter(newsList, getContext());
+
+        binding.rvNews.setAdapter(newsAdapter);
+        loadActive[1] = true;
     }
     private void selectFragment(){
         if (loadActive[0] == true && loadActive[1] == true){
@@ -287,6 +289,7 @@ public class AnalysisFragment extends Fragment implements MainScreen.Backpressed
                 addList();//////
                 settingFragmentOk();/////
                 setAnalysisList();//////
+                setNewsList();//////
             }
         });
 
@@ -296,36 +299,15 @@ public class AnalysisFragment extends Fragment implements MainScreen.Backpressed
     }
 
     private void addList() {
-        allGetAnalysisList.add(new Analysis("авыаф","jfdks;afas;","jfdk;ljfldskjf","2 дня","fdfads", 1000, "jf;dksjf;la"));
-        allGetAnalysisList.add(new Analysis("Клинический авф крови с лейкоцитарной формулировкой","jfdks;afas;","jfdk;ljfldskjf","2 дня","fdfads", 1000, "jf;dksjf;la"));
-        allGetAnalysisList.add(new Analysis("Клинический пыфрф крови с лейкоцитарной формулировкой","jfdks;afas;","jfdk;ljfldskjf","2 дня","fdfads", 1000, "jf;dksjf;la"));
-        allGetAnalysisList.add(new Analysis("Клинический фыа крови с лейкоцитарной формулировкой","jfdks;afas;","jfdk;ljfldskjf","2 дня","fdfads", 1000, "jf;dksjf;la"));
-        allGetAnalysisList.add(new Analysis("Клинический аналипфз крови с лейкоцитарной формулировкой","jfdks;afas;","jfdk;ljfldskjf","2 дня","fdfads", 1000, "jf;dksjf;la"));
-        allGetAnalysisList.add(new Analysis("Клинический аналиифмсфз крови с лейкоцитарной формулировкой","jfdks;afas;","jfdk;ljfldskjf","2 дня","fdfads", 1000, "jf;dksjf;la"));
-        allGetAnalysisList.add(new Analysis("Клинический аналсямяиз крови с лейкоцитарной формулировкой","jfdks;afas;","jfdk;ljfldskjf","2 дня","fdfads", 1000, "jf;dksjf;la"));
-        allGetAnalysisList.add(new Analysis("Клинический аналимиз крови с лейкоцитарной формулировкой","jfdks;afas;","jfdk;ljfldskjf","2 дня","fdfads", 1000, "jf;dksjf;la"));
-        allGetAnalysisList.add(new Analysis("Клинический аналйке1из крови с лейкоцитарной формулировкой","jfdks;afas;","jfdk;ljfldskjf","2 дня","fdfads", 1000, "jf;dksjf;la"));
-        allGetAnalysisList.add(new Analysis("Клинический анализ крови с лейкоцитарной формулировкой","jfdks;afas;","jfdk;ljfldskjf","2 дня","fdfads", 1000, "jf;dksjf;la"));
-        allGetAnalysisList.add(new Analysis("Клинический анализ крови с лейкоцитарной формулировкой","jfdks;afas;","jfdk;ljfldskjf","2 дня","fdfads", 1000, "jf;dksjf;la"));
-        allGetAnalysisList.add(new Analysis("Клинический анализ крови с лейкоцитарной формулировкой","jfdks;afas;","jfdk;ljfldskjf","2 дня","fdfads", 1000, "jf;dksjf;la"));
-        allGetAnalysisList.add(new Analysis("Клинический анализ крови с лейкоцитарной формулировкой","jfdks;afas;","jfdk;ljfldskjf","2 дня","fdfads", 1000, "jf;dksjf;la"));
-        allGetAnalysisList.add(new Analysis("Клинический анализ крови с лейкоцитарной формулировкой","jfdks;afas;","jfdk;ljfldskjf","2 дня","fdfads", 1000, "jf;dksjf;la"));
-        allGetAnalysisList.add(new Analysis("Клинический анализ крови с лейкоцитарной формулировкой","jfdks;afas;","jfdk;ljfldskjf","2 дня","fdfads", 1000, "jf;dksjf;la"));
-        allGetAnalysisList.add(new Analysis("Клинический анализ крови с лейкоцитарной формулировкой","jfdks;afas;","jfdk;ljfldskjf","2 дня","fdfads", 1000, "jf;dksjf;la"));
-        allGetAnalysisList.add(new Analysis("Кал формулировкой","jfdks;afas;","jfdk;ljfldskjf","2 дня","fdfads", 1000, "jf;dksjf;la"));
-        allGetAnalysisList.add(new Analysis("Клинический анализ крови с лейкоцитарной формулировкой","jfdks;afas;","jfdk;ljfldskjf","2 дня","fdfads", 1000, "jf;dksjf;la"));
-        allGetAnalysisList.add(new Analysis("Клинический анализ крови с лейкоцитарной формулировкой","jfdks;afas;","jfdk;ljfldskjf","2 дня","fdfads", 1000, "jf;dksjf;la"));
-        allGetAnalysisList.add(new Analysis("Клинический анализ крови с лейкоцитарной формулировкой","jfdks;afas;","jfdk;ljfldskjf","2 дня","fdfads", 1000, "jf;dksjf;la"));
-        allGetAnalysisList.add(new Analysis("Клинический анализ крови с лейкоцитарной формулировкой","jfdks;afas;","jfdk;ljfldskjf","2 дня","fdfads", 1000, "jf;dksjf;la"));
-        allGetAnalysisList.add(new Analysis("Клинический анализ крови с лейкоцитарной формулировкой","jfdks;afas;","jfdk;ljfldskjf","2 дня","fdfads", 1000, "jf;dksjf;la"));
-        allGetAnalysisList.add(new Analysis("Клинический анализ крови с лейкоцитарной формулировкой","jfdks;afas;","jfdk;ljfldskjf","2 дня","fdfads", 1000, "jf;dksjf;la"));
-        allGetAnalysisList.add(new Analysis("Клинический анализ крови с лейкоцитарной формулировкой","jfdks;afas;","jfdk;ljfldskjf","2 дня","fdfads", 1000, "jf;dksjf;la"));
-        allGetAnalysisList.add(new Analysis("Клинический анализ крови с лейкоцитарной формулировкой","jfdks;afas;","jfdk;ljfldskjf","2 дня","fdfads", 1000, "jf;dksjf;la"));
-        allGetAnalysisList.add(new Analysis("Клинический анализ крови с лейкоцитарной формулировкой","jfdks;afas;","jfdk;ljfldskjf","2 дня","fdfads", 1000, "jf;dksjf;la"));
-        allGetAnalysisList.add(new Analysis("Клинический анализ крови с лейкоцитарной формулировкой","jfdks;afas;","jfdk;ljfldskjf","2 дня","fdfads", 1000, "jf;dksjf;la"));
-        allGetAnalysisList.add(new Analysis("Клинический анализ крови с лейкоцитарной формулировкой","jfdks;afas;","jfdk;ljfldskjf","2 дня","fdfads", 1000, "jf;dksjf;la"));
-        allGetAnalysisList.add(new Analysis("Кал","jfdks;afas;","jfdk;ljfldskjf","2 дня","fdfads", 1000, "jf;dksjf;la"));
-        }
+        allGetAnalysisList.add(new Analysis("Грипп","Острое инфекционное заболевание дыхательных путей, вызываемое вирусом гриппа","Мазки из носоглотки для вирусологической диагностики гриппа собирают стерильными зондами с вискозными тампонами со слизистой оболочки из нижнего носового хода.","2 дня","Мазки из носоглотки", 1000, "Rub"));
+        allGetAnalysisList.add(new Analysis("ОРВИ","особая группа заболеваний, которая по своему удельному весу в структуре инфекционной патологии человека прочно занимает одно из ведущих мест. Более 200 вирусов могут быть причиной возникновения ОРВИ, что чрезвычайно затрудняет проведение диагностики.","Мазки из носоглотки для вирусологической диагностики гриппа собирают стерильными зондами с вискозными тампонами со слизистой оболочки из нижнего носового хода.","2 дня","слюна", 500, "Rub"));
+        allGetAnalysisList.add(new Analysis("Рак","злокачественная опухоль, развивающаяся из эпителиальных клеток различных органов и систем. Раковые клетки отличаются незрелостью, способностью к неконтролируемому росту, размножению, проникновению в окружающие ткани с формированием метастазов. Имеет неблагоприятный исход. Смертность от онкологических заболеваний занимает третье место в мире, уступая патологиям сердечно-сосудистой и дыхательной системы.","Мазки из носоглотки для вирусологической диагностики гриппа собирают стерильными зондами с вискозными тампонами со слизистой оболочки из нижнего носового хода.","4 дня","Мазки из носоглотки", 2000, "Rub"));
+
+        newsList.add(new News("0", "title", "d", 1000, String.valueOf(R.drawable.news_banner1) ));
+        newsList.add(new News("1", "title", "d", 1000, String.valueOf(R.drawable.news_banner1) ));
+        newsList.add(new News("2", "title", "d", 1000, String.valueOf(R.drawable.news_banner1) ));
+
+    }
 
     private void setting(){
         loadState();

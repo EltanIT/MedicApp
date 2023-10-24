@@ -137,17 +137,32 @@ public class PaymentFragment extends Fragment implements MainScreen.BackpressedL
             super.onPostExecute(s);
             if (s==null){
 
-                requireActivity().runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        Toast.makeText(getContext(), "Ошибка подключения к серверу", Toast.LENGTH_SHORT).show();
-
-//                    binding.progressLl.setVisibility(View.GONE);
-//                    binding.group2Cl.setVisibility(View.VISIBLE);
-                    }
-                });
+//                requireActivity().runOnUiThread(new Runnable() {
+//                    @Override
+//                    public void run() {
+//                        Toast.makeText(getContext(), "Ошибка подключения к серверу", Toast.LENGTH_SHORT).show();
+//
+////                    binding.progressLl.setVisibility(View.GONE);
+////                    binding.group2Cl.setVisibility(View.VISIBLE);
+//                    }
+//                });
                 cancel(true);
-                requireActivity().getSupportFragmentManager().popBackStack();
+//                requireActivity().getSupportFragmentManager().popBackStack();
+
+                try {
+                    Thread.sleep(1000);
+                    requireActivity().runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            binding.progressLl.setVisibility(View.GONE);
+                            binding.group2Cl.setVisibility(View.VISIBLE);
+                        }
+                    });
+
+                } catch (InterruptedException e) {
+                    requireActivity().getSupportFragmentManager().popBackStack();
+                }
+
             }
 
         }
